@@ -1,0 +1,30 @@
+<div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table">
+              <thead class=" text-primary">
+                  <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Tx. de Depreciação</th>
+                    <th scope="col">Vida útil (anos)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let category of categories">
+                    <th scope="row">{{ category.id }}</th>
+                    <td>{{ category.name }}</td>
+                    <td>{{ category.depretiationRate*100 }}%</td>
+                    <td>{{ category.lifeCycle }}</td>
+                </tr>
+            </tbody> 
+                
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
