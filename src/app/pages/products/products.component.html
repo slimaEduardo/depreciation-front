@@ -1,0 +1,39 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header">
+      </div>
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table">
+            <thead class=" text-primary">
+                <tr>
+                  <th scope="col">Id</th>
+                  <th scope="col">Nome</th>
+                  <th scope="col">Descrição</th>
+                  <th scope="col">Categoria</th>
+                  <th scope="col">Propietário</th>
+                  <th scope="col">Valor de compra</th>
+                  <th scope="col">Valor atual</th>
+                  <!-- <th scope="col">Categoria</th> -->
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let product of products">
+                  <th scope="row">{{ product.id }}</th>
+                  <td>{{ product.name }}</td>
+                  <td>{{ product.description }}</td>
+                  <td>{{ product.category }}</td>
+                  <td>{{ product.company }}</td>
+                  <td>{{ product.initialPrice | currency:'BRL'}}</td>
+                  <td>{{ product.currentValue | currency:'BRL'}}</td>
+                 <!--  <td>{{product.category}}</td> -->
+                </tr>
+          </tbody> 
+              
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
