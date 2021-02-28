@@ -17,8 +17,7 @@ export class CompanyComponent implements OnInit {
   ngOnInit(): void {
     this.companyService.getProducts()
    .then((comp: Company[]) => {
-     this.companies = comp,
-     console.log(this.companies)
+     this.companies = comp
    })
   }
 

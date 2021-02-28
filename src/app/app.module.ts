@@ -16,10 +16,12 @@ import { HttpClientModule } from "@angular/common/http";
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
     AdminLayoutComponent,
+    
     ],
   imports: [
     BrowserAnimationsModule,

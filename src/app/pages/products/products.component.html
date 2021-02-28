@@ -1,9 +1,16 @@
+ <!-- Botão para acionar modal -->
+ <button type="button" class="btn btn-primary btn-round" data-toggle="modal" data-target="#modalExemplo">
+  Novo Produto
+</button>
+
 <div class="row">
   <div class="col-md-12">
     <div class="card">
       <div class="card-header">
       </div>
       <div class="card-body">
+       
+
         <div class="table-responsive">
           <table class="table">
             <thead class=" text-primary">
@@ -15,7 +22,7 @@
                   <th scope="col">Propietário</th>
                   <th scope="col">Valor de compra</th>
                   <th scope="col">Valor atual</th>
-                  <!-- <th scope="col">Categoria</th> -->
+                
                 </tr>
               </thead>
               <tbody>
@@ -27,7 +34,7 @@
                   <td>{{ product.company }}</td>
                   <td>{{ product.initialPrice | currency:'BRL'}}</td>
                   <td>{{ product.currentValue | currency:'BRL'}}</td>
-                 <!--  <td>{{product.category}}</td> -->
+               
                 </tr>
           </tbody> 
               
@@ -37,3 +44,9 @@
     </div>
   </div>
  
+
+
+  <div class="container">
+    <app-new-product></app-new-product>
+  </div>
+
