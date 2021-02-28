@@ -2,9 +2,9 @@
 <div class="modal fade" id="modalExemplo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
-      <form [formGroup]="formulary" (ngSubmit)="addProd()">
+      <form [formGroup]="formulary" (ngSubmit)="addCmp()">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Novo Produto</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Nova Empresa</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -19,8 +19,8 @@
                                 <input type="text" class="form-control" formControlName="name" required>
                               
                              
-                                  <label for="recipient-name" class="col-form-label">Descrição</label>
-                                  <input type="text" class="form-control" formControlName="description" required> 
+                                  <label for="recipient-name" class="col-form-label">Nome Fantasia</label>
+                                  <input type="text" class="form-control" formControlName="fantasyName" required> 
                            
                              
                             </div>
@@ -33,17 +33,11 @@
                           <div class="row">
                             <div class="col-8 col-md-6">
                                 
-                                    <label for="recipient-name" class="col-form-label">Valor</label>
-                                    <input type="text" class="form-control" formControlName="price" required>
+                                    <label for="recipient-name" class="col-form-label">CNPJ</label>
+                                    <input type="text" class="form-control" formControlName="cnpj" required>
                                 
                             </div>
-                            <div class="col-4 col-md-6">
-                            
-                                    <label for="recipient-name" class="col-form-label">Data de Compra</label>
-                                    <input type="text" class="form-control" formControlName="purchaseDate" required>
-                           
                             </div>
-                          </div>
                         </div>
                                           
 
@@ -60,3 +54,4 @@
       </div>
     </div>
   </div>
+

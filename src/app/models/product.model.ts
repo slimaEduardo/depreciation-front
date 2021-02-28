@@ -2,8 +2,8 @@ export interface Product{
     id : string;
     name : string;
     description: string;
-    initialPrice : number;
-    purchasedDate: Date;
+    initialPrice : string;
+    purchasedDate: string;
     prodAge: number;
     depretiationValue: number;
     currentValue: number;

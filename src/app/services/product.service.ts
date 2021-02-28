@@ -28,4 +28,12 @@ export class ProductService {
           
       })
   }
+
+  public insert(obj: Product){
+    return this.http.post(`${API_CONFIG.baseUrl}/products/`,obj,
+    {
+      observe: 'response',
+      responseType: 'text'
+    });
+  }
 }

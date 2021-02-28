@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AdminLayoutRoutes } from './admin-layout.routing';
 
@@ -16,16 +16,19 @@ import { CompanyComponent } from 'app/pages/company/company.component';
 import { CategoryComponent } from 'app/pages/category/category.component';
 import { UserComponent }            from '../../pages/user/user.component';
 import { NewProductComponent } from 'app/pages/products/new-product/new-product.component';
+import { NewCompanyComponent } from 'app/pages/company/new-company/new-company.component';
 
 @NgModule({
   imports: [
     CommonModule,
     RouterModule.forChild(AdminLayoutRoutes),
     FormsModule,
-    NgbModule
+    NgbModule,
+    ReactiveFormsModule
   ],
   declarations: [
     NewProductComponent,
+    NewCompanyComponent,
     ProductsComponent,
     CategoryComponent,
     CompanyComponent,

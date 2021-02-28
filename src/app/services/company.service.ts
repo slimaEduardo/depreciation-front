@@ -23,4 +23,12 @@ export class CompanyService {
           
       })
   }
+
+  public insert(obj: Company){
+    return this.http.post(`${API_CONFIG.baseUrl}/companies`,obj,
+    {
+      observe: 'response',
+      responseType: 'text'
+    });
+  }
 }
