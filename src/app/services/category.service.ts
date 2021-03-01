@@ -10,8 +10,8 @@ export class CategoryService {
   constructor(public http: HttpClient) {
   }
 
-  public findById(product_id : number){
-    return this.http.get<Category>(`${API_CONFIG.baseUrl}/categories/${product_id}`);
+  public findById(category_id : number){
+    return this.http.get<Category>(`${API_CONFIG.baseUrl}/categories/${category_id}`);
   }
 
   
@@ -22,5 +22,21 @@ export class CategoryService {
         return response
           
       })
+  }
+
+  public insert(obj: Category){
+   
+    return this.http.post(`${API_CONFIG.baseUrl}/categories`,obj,
+    {
+      observe: 'response',
+      responseType: 'text'
+    });
+  }
+
+  public delete(category_id : number){
+    return this.http.delete(`${API_CONFIG.baseUrl}/categories/${category_id}`)
+    .subscribe(response => {
+      console.log(response)
+    })
   }
 }

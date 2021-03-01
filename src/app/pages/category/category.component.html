@@ -20,6 +20,7 @@
                     <td>{{ category.name }}</td>
                     <td>{{ category.depretiationRate*100 }}%</td>
                     <td>{{ category.lifeCycle }}</td>
+                    <td><button class="btn btn-danger" (click)="delete(category.id)">Deletar</button></td>
                 </tr>
             </tbody> 
                 

@@ -11,14 +11,23 @@ import { CompanyService } from 'app/services/company.service';
 export class CompanyComponent implements OnInit {
 
   public companies: Company[] = []
+  public company_id: number
 
   constructor(private companyService:CompanyService) { }
 
   ngOnInit(): void {
-    this.companyService.getProducts()
+    this.listCompanies()
+  }
+
+  public listCompanies(){
+    this.companyService.getCompanies()
    .then((comp: Company[]) => {
      this.companies = comp
    })
   }
 
+  public delete(companyId: number){
+    this.company_id = companyId
+     
+  }
 }

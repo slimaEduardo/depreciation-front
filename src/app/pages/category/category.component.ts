@@ -15,10 +15,17 @@ export class CategoryComponent implements OnInit {
   constructor(private categoryService: CategoryService) { }
 
   ngOnInit(): void {
+    this.listCategory()
+  }
+
+  public listCategory(){
     this.categoryService.getProducts()
    .then((cat: Category[]) => {
      this.categories = cat
    })
   }
 
+ public delete(category_id: number){
+  this.categoryService.delete(category_id)
+ }
 }
