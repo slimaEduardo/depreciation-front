@@ -38,4 +38,13 @@ export class CompanyService {
       
     })
   }
+
+  public update(company_id: string, obj: Company){
+    console.log(company_id, obj)
+   return this.http.put(`${API_CONFIG.baseUrl}/companies/${company_id}`, obj)
+    .subscribe(response => {
+      console.log(response),
+      error => {console.log(error)}
+    })
+  }
 }

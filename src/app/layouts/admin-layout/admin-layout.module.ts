@@ -18,6 +18,7 @@ import { UserComponent }            from '../../pages/user/user.component';
 import { NewProductComponent } from 'app/pages/products/new-product/new-product.component';
 import { NewCompanyComponent } from 'app/pages/company/new-company/new-company.component';
 import { DelCompanyComponent } from 'app/pages/company/del-company/del-company.component';
+import { UpdateCompanyComponent } from 'app/pages/company/update-company/update-company.component';
 
 @NgModule({
   imports: [
@@ -28,6 +29,7 @@ import { DelCompanyComponent } from 'app/pages/company/del-company/del-company.c
     ReactiveFormsModule
   ],
   declarations: [
+    UpdateCompanyComponent,  
     DelCompanyComponent,
     NewProductComponent,
     NewCompanyComponent,

@@ -1,4 +1,4 @@
-<button type="button" class="btn btn-primary btn-round" data-toggle="modal" data-target="#modalExemplo">
+<button type="button" class="btn btn-primary btn-round" data-toggle="modal" data-target="#modalAddComp">
   nova empresa
 </button>
 
@@ -9,7 +9,8 @@
       </div>
       <div class="card-body">
         <div class="table-responsive">
-          <table class="table">
+          <table class="table table-hover" >
+            
             <thead class=" text-primary">
               <tr>
                 <th scope="col">Id</th>
@@ -18,17 +19,27 @@
                 <th scope="col">CNPJ</th>
               </tr>
             </thead>
-            <tbody>
+            
+            <tbody >
+            
               <tr *ngFor="let company of companies">
-                <th scope="row">{{ company.id }}</th>
+                
+                <th scope="row" >{{ company.id }}</th>
                 <td>{{ company.name }}</td>
                 <td>{{ company.fantasyName }}</td>
                 <td>{{ company.cnpj }}</td>
-                <td><button class="btn btn-danger" data-toggle="modal"
-                    data-target="#exampleModalCenter" (click)="delete(company.id)">Deletar</button></td>
+                
+                <td><button class="btn btn-info btn-icon" style="width: 15px; height: 35px; " data-toggle="modal"
+                  data-target="#modalUpdateComp" (click)="listCompany(company.id)"><img style="width: 30px; height: 30px;" src="../assets/img/icons/baseline_create_white_18dp.png"></button>
+               <button class="btn btn-danger btn-icon"  style="width: 15px; height: 35px;" data-toggle="modal"
+                    data-target="#modalDelComp" (click)="referenceId(company.id)"><img style="width: 30px; height: 30px;" src="../assets/img/icons/baseline_delete_white_18dp.png"></button></td>
+                  
               </tr>
+          
             </tbody>
+         
           </table>
+        
         </div>
       </div>
     </div>
@@ -36,5 +47,68 @@
 </div>
 <div class="container">
   <app-new-company></app-new-company>
+ 
+
+<!-- <app-update-company [company]="company"></app-update-company> -->
+  
+  
   <app-del-company [company_id]="company_id"></app-del-company>
+</div>
+
+<!-- Modal -->
+
+<div class="modal fade" id="modalUpdateComp" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <form [formGroup]="formularyUp" >
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Editar Empresa</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            
+                <div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            
+                                <label for="recipient-name" class="col-form-label"></label>
+                                <input type="text" class="form-control" data-whatever="company.name" placeholder="recipient-name" formControlName="name" required>
+                              
+                             
+                                  <label for="recipient-name" class="col-form-label"></label>
+                                  <input type="text" class="form-control" placeholder="Nome Fantasia" formControlName="fantasyName" required> 
+                           
+                             
+                            </div>
+                        </div>
+                      </div>
+                     
+                      <div class="row">
+                        <div class="col-sm-12">
+                        
+                          <div class="row">
+                            <div class="col-8 col-md-6">
+                              <fieldset disabled>
+                                    <label for="recipient-name" class="col-form-label"></label>
+                                    <input type="text" class="form-control" [disabled] formControlName="cnpj" required>
+                                  </fieldset>
+                            </div>
+                            </div>
+                        </div>
+                                          
+
+                      
+                </div>
+          
+              
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+          <button type="submit" class="btn btn-primary" (click)="edit(company.id)">Editar</button>
+        </div>
+      </form>
+    </div>
+  </div>
 </div>
