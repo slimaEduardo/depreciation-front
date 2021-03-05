@@ -43,8 +43,6 @@ export class CompanyService {
     console.log(company_id, obj)
    return this.http.put(`${API_CONFIG.baseUrl}/companies/${company_id}`, obj)
     .subscribe(response => {
-      console.log(response),
-      error => {console.log(error)}
-    })
+     }, error => {console.log(error)})
   }
 }

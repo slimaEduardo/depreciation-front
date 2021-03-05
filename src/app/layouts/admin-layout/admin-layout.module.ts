@@ -16,9 +16,7 @@ import { CompanyComponent } from 'app/pages/company/company.component';
 import { CategoryComponent } from 'app/pages/category/category.component';
 import { UserComponent }            from '../../pages/user/user.component';
 import { NewProductComponent } from 'app/pages/products/new-product/new-product.component';
-import { NewCompanyComponent } from 'app/pages/company/new-company/new-company.component';
-import { DelCompanyComponent } from 'app/pages/company/del-company/del-company.component';
-import { UpdateCompanyComponent } from 'app/pages/company/update-company/update-company.component';
+
 
 @NgModule({
   imports: [
@@ -29,10 +27,7 @@ import { UpdateCompanyComponent } from 'app/pages/company/update-company/update-
     ReactiveFormsModule
   ],
   declarations: [
-    UpdateCompanyComponent,  
-    DelCompanyComponent,
     NewProductComponent,
-    NewCompanyComponent,
     ProductsComponent,
     CategoryComponent,
     CompanyComponent,
