@@ -1,3 +1,8 @@
+<!-- Botão para inserção de categoria -->
+<button type="button" class="btn btn-primary btn-round" data-toggle="modal" data-target="#modalAddCat" (click)="resetFormulary()">
+  nova categoria
+</button>
+<!-- Tabela com a lista de categorias -->
 <div class="row">
     <div class="col-md-12">
       <div class="card">
@@ -20,12 +25,138 @@
                     <td>{{ category.name }}</td>
                     <td>{{ category.depretiationRate*100 }}%</td>
                     <td>{{ category.lifeCycle }}</td>
-                    <td><button class="btn btn-danger" (click)="delete(category.id)">Deletar</button></td>
+                    <button class="btn btn-info btn-icon" style="width: 15px; height: 35px; " data-toggle="modal"
+                  data-target="#modalUpdateCat" (click)="listCat(category.id)"><img style="width: 30px; height: 30px;" src="../assets/img/icons/baseline_create_white_18dp.png"></button>
+               <button class="btn btn-danger btn-icon"  style="width: 15px; height: 35px;" data-toggle="modal"
+                    data-target="#modalDelCat" (click)="referenceId(category.id)"><img style="width: 30px; height: 30px;" src="../assets/img/icons/baseline_delete_white_18dp.png"></button>
                 </tr>
             </tbody> 
                 
             </table>
           </div>
+        </div>
+      </div>
+    </div>
+
+<!-- Modal de inserção da categoria -->
+
+<div class="modal fade" id="modalAddCat" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+    <form [formGroup]="formulary" (ngSubmit)="insert()">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Nova Categoria</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div>
+          <div class="row">
+            <div class="col-sm-12">
+              <label for="recipient-name" class="col-form-label">Nome</label>
+              <input type="text" class="form-control" formControlName="name" required>
+              <label for="recipient-name" class="col-form-label">Taxa de Depreciação</label>
+              <input type="text" class="form-control" formControlName="depretiationRate" required> 
+            </div>
+          </div>
+        </div>
+       <div class="row">
+       <div class="col-sm-12">
+        <div class="row">
+          <div class="col-8 col-md-6">
+            <label for="recipient-name" class="col-form-label">Vida útil (em anos)</label>
+            <input type="text" class="form-control" formControlName="lifeCycle" required>
+          </div>
+        </div>
+       </div>
+       </div>
+      </div>
+         <div class="modal-footer">
+         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+        <button type="submit" class="btn btn-primary" [disabled]="!formulary.valid">Adicionar</button>
+        </div>
+    </form>
+    </div>
+  </div>
+</div>
+
+<!-- Modal para editar categoria -->
+
+<div class="modal fade" id="modalUpdateCat" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <form [formGroup]="formulary" >
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Editar Categoria </h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            
+                <div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            
+                                <label for="recipient-name" class="col-form-label"></label>
+                                <input type="text" class="form-control" placeholder="Nome da Catgoria" formControlName="name" required>
+                              
+                             
+                                  <label for="recipient-name" class="col-form-label"></label>
+                                  <input type="text" class="form-control" placeholder="Taxa de Depreciação" formControlName="depretiationRate" required> 
+                           
+                             
+                            </div>
+                        </div>
+                      </div>
+                     
+                      <div class="row">
+                        <div class="col-sm-12">
+                        
+                          <div class="row">
+                            <div class="col-8 col-md-6">
+                             
+                                    <label for="recipient-name" class="col-form-label" disabled></label>
+                                    <input type="text" class="form-control" placeholder="Vida útil (em anos)" formControlName="lifeCycle" required>
+                              
+                            </div>
+                            </div>
+                        </div>
+                                          
+
+                      
+                </div>
+          
+              
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+          <button type="submit" class="btn btn-primary"  [disabled]="!formulary.valid" (click)="edit(category.id)">Editar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+  
+  
+  <!-- Modal para exclusão de Empresas -->
+  
+  <div class="modal fade" id="modalDelCat" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Deletar Empresa</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Tem certeza?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-primary" (click)="delete(category_id)" data-dismiss="modal">Apagar</button>
         </div>
       </div>
     </div>

@@ -95,4 +95,8 @@ export class CompanyComponent implements OnInit {
         this.companyService.delete(companyId)
         this.att()
       }
+
+      public resetFormulary(){
+        this.formulary.reset()
+      }
 }

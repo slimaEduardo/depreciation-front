@@ -5,6 +5,7 @@ import { Category } from "app/models/category.model";
 
 @Injectable()
 export class CategoryService {
+  
 
     
   constructor(public http: HttpClient) {
@@ -31,6 +32,12 @@ export class CategoryService {
       observe: 'response',
       responseType: 'text'
     });
+  }
+
+  update(category_id: number, obj: Category) {
+    return this.http.put(`${API_CONFIG.baseUrl}/categories/${category_id}`, obj)
+    .subscribe(response => {
+     }, error => {console.log(error)})
   }
 
   public delete(category_id : number){

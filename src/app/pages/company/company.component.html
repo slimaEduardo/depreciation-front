@@ -1,4 +1,4 @@
-<button type="button" class="btn btn-primary btn-round" data-toggle="modal" data-target="#modalAddComp">
+<button type="button" class="btn btn-primary btn-round" data-toggle="modal" data-target="#modalAddComp" (click)="resetFormulary()">
   nova empresa
 </button>
 
@@ -32,7 +32,8 @@
                 <td><button class="btn btn-info btn-icon" style="width: 15px; height: 35px; " data-toggle="modal"
                   data-target="#modalUpdateComp" (click)="listCompany(company.id)"><img style="width: 30px; height: 30px;" src="../assets/img/icons/baseline_create_white_18dp.png"></button>
                <button class="btn btn-danger btn-icon"  style="width: 15px; height: 35px;" data-toggle="modal"
-                    data-target="#modalDelComp" (click)="referenceId(company.id)"><img style="width: 30px; height: 30px;" src="../assets/img/icons/baseline_delete_white_18dp.png"></button></td>
+                    data-target="#modalDelComp" (click)="referenceId(company.id)"><img style="width: 30px; height: 30px;" src="../assets/img/icons/baseline_delete_white_18dp.png"></button>
+                </td>
                   
               </tr>
           
@@ -45,15 +46,7 @@
     </div>
   </div>
 </div>
-<div class="container">
- <!--  <app-new-company></app-new-company> -->
- 
 
-<!-- <app-update-company [company]="company"></app-update-company> -->
-  
-  
- <!--  <app-del-company [company_id]="company_id"></app-del-company> -->
-</div>
 
 <!-- Modal de Edição de empresas-->
 
