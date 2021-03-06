@@ -1,5 +1,5 @@
  <!-- Botão para acionar modal -->
- <button type="button" class="btn btn-primary btn-round" data-toggle="modal" data-target="#modalExemplo">
+ <button type="button" class="btn btn-primary btn-round" data-toggle="modal" data-target="#modalAddProd" (click)="initializeLists()">
   Novo Produto
 </button>
 
@@ -20,6 +20,7 @@
                   <th scope="col">Descrição</th>
                   <th scope="col">Categoria</th>
                   <th scope="col">Propietário</th>
+                  <th scope="col">Data de Compra</th>
                   <th scope="col">Valor de compra</th>
                   <th scope="col">Valor atual</th>
                 
@@ -32,9 +33,13 @@
                   <td>{{ product.description }}</td>
                   <td>{{ product.category }}</td>
                   <td>{{ product.company }}</td>
+                  <td>{{ product.purchasedDate }}</td>
                   <td>{{ product.initialPrice | currency:'BRL'}}</td>
                   <td>{{ product.currentValue | currency:'BRL'}}</td>
-               
+                  <button class="btn btn-info btn-icon" style="width: 15px; height: 35px; " data-toggle="modal"
+                  data-target="#modalUpdateProd" (click)="listProd(product.id)"><img style="width: 30px; height: 30px;" src="../assets/img/icons/baseline_create_white_18dp.png"></button>
+               <button class="btn btn-danger btn-icon"  style="width: 15px; height: 35px;" data-toggle="modal"
+                    data-target="#modalDelProd"  (click)="referenceId(product.id)"><img style="width: 30px; height: 30px;" src="../assets/img/icons/baseline_delete_white_18dp.png"></button>
                 </tr>
           </tbody> 
               
@@ -46,7 +51,151 @@
  
 
 
-  <div class="container">
-    <app-new-product></app-new-product>
+  
+<!-- Modal para inserir produtos-->
+<div class="modal fade" id="modalAddProd" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+    <form [formGroup]="formulary" (ngSubmit)=addProd()>
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Novo Produto</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          
+              <div>
+                  <div class="row">
+                      <div class="col-sm-12">
+                          
+                              <label for="recipient-name" class="col-form-label">Nome</label>
+                              <input type="text" class="form-control" formControlName="name" required>
+                            
+                           
+                                <label for="recipient-name" class="col-form-label">Descrição</label>
+                                <input type="text" class="form-control" formControlName="description" required> 
+                         
+                           
+                          </div>
+                      </div>
+                    </div>
+                   
+                    <div class="row">
+                      <div class="col-sm-12">
+                      
+                        <div class="row">
+                          <div class="col-8 col-md-6">
+                              
+                                  <label for="recipient-name" class="col-form-label">Valor</label>
+                                  <input type="price" class="form-control" formControlName="initialPrice" required>
+                              
+                          </div>
+                          <div class="col-4 col-md-6">
+                          
+                                  <label for="recipient-name" class="col-form-label">Data de Compra</label>
+                                  <input type="date" class="form-control" formControlName="purchasedDate" required>
+                         
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-12">
+                      
+                        <div class="row">
+                          <div class="col-8 col-md-6">
+                              
+                                  <label for="recipient-name" class="col-form-label">Categoria</label>
+                                  <select  class="form-control" id="company" formControlName="categoryId"  required>
+                                    <option value="">--Selecione uma categoria--</option>
+                                    <option *ngFor="let category of categories" [value]="category.id">{{ category.name }}</option>
+                                   
+                                  </select> 
+                              
+                          </div>
+                          <div class="col-4 col-md-6">
+                          
+                                  <label for="recipient-name" class="col-form-label">Propietário</label>
+                                  <select  class="form-control" id="company" formControlName="companyId"  required>
+                                    <option value="">--Selecione uma empresa--</option>
+                                    <option *ngFor="let company of companies" [value]="company.id">{{ company.name }}</option>
+                                   
+                                  </select>
+                         
+                          </div>
+                        </div>
+                      </div>
+                                                        
+                      
+                    
+              </div>
+        
+            
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+        <button type="submit" class="btn btn-primary" [disabled]="!formulary.valid">Adicionar</button>
+      </div>
+    </form>
+    </div>
   </div>
+</div>
 
+<!-- Modal para editar produto -->
+
+<div class="modal fade" id="modalUpdateProd" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+    <form [formGroup]="formulary">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Editar Produto</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          
+              <div>
+                  <div class="row">
+                      <div class="col-sm-12">
+                          
+                              <label for="recipient-name" class="col-form-label">Nome</label>
+                              <input type="text" class="form-control" formControlName="name" required>
+                            
+                           
+                                <label for="recipient-name" class="col-form-label">Descrição</label>
+                                <input type="text" class="form-control" formControlName="description" required> 
+                         
+                           
+                          </div>
+                      </div>
+                    </div>      
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+        <button type="submit" class="btn btn-primary" [disabled]="!formulary.valid" (click)="edit(product.id)">Adicionar</button>
+      </div>
+    </form>
+    </div>
+  </div>
+</div>
+
+<!-- Modal para exclusão de Empresas -->
+  
+<div class="modal fade" id="modalDelProd" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Deletar Empresa</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Tem certeza?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-primary" (click)="delete(product_id)" data-dismiss="modal">Apagar</button>
+      </div>
+    </div>
+  </div>

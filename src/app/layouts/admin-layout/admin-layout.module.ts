@@ -15,7 +15,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CompanyComponent } from 'app/pages/company/company.component';
 import { CategoryComponent } from 'app/pages/category/category.component';
 import { UserComponent }            from '../../pages/user/user.component';
-import { NewProductComponent } from 'app/pages/products/new-product/new-product.component';
+
 
 
 @NgModule({
@@ -27,7 +27,6 @@ import { NewProductComponent } from 'app/pages/products/new-product/new-product.
     ReactiveFormsModule
   ],
   declarations: [
-    NewProductComponent,
     ProductsComponent,
     CategoryComponent,
     CompanyComponent,

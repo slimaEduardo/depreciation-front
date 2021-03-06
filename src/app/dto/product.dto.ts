@@ -1,6 +1,3 @@
-import { Category } from "./category.model";
-import { Company } from "./company.model";
-
 export interface Product{
     id : number;
     name : string;
@@ -10,6 +7,6 @@ export interface Product{
     prodAge: number;
     depreciationValue: number;
     currentValue: number;
-    categoryId: Category;
-    companyId: Company;
+    categoryId: number;
+    companyId: number;
 }

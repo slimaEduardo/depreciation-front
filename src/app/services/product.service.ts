@@ -29,11 +29,25 @@ export class ProductService {
       })
   }
 
-  public insert(obj: Product){
-    return this.http.post(`${API_CONFIG.baseUrl}/products/`,obj,
-    {
-      observe: 'response',
-      responseType: 'text'
+  public insert(obj: Product): Promise<Product>{
+    console.log(obj)
+    return this.http.post(`${API_CONFIG.baseUrl}/products/`,obj)
+    .toPromise()
+    .then((response: any) => {
+      return response
     });
+  }
+
+  public update(product_id: number, obj: Product) {
+    return this.http.put(`${API_CONFIG.baseUrl}/products/${product_id}`, obj)
+    .subscribe(response => {
+     }, error => {console.log(error)})
+  }
+
+  public delete(product_id : number){
+    return this.http.delete(`${API_CONFIG.baseUrl}/products/${product_id}`)
+    .subscribe(response => {
+      console.log(response)
+    })
   }
 }

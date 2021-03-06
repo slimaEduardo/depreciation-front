@@ -16,7 +16,7 @@ export class CategoryService {
   }
 
   
-  public getProducts(): Promise<Category[]>{
+  public getCategories(): Promise<Category[]>{
       return this.http.get(`${API_CONFIG.baseUrl}/categories`)
       .toPromise()
       .then((response: any) => {  
@@ -34,7 +34,7 @@ export class CategoryService {
     });
   }
 
-  update(category_id: number, obj: Category) {
+ public update(category_id: number, obj: Category) {
     return this.http.put(`${API_CONFIG.baseUrl}/categories/${category_id}`, obj)
     .subscribe(response => {
      }, error => {console.log(error)})

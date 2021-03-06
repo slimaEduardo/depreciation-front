@@ -31,7 +31,7 @@ export class CategoryComponent implements OnInit {
   }
 
   public listCategories(){
-    this.categoryService.getProducts()
+    this.categoryService.getCategories()
    .then((cat: Category[]) => {
      this.categories = cat
    })
