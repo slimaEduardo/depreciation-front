@@ -41,7 +41,7 @@ export class AuthService{
                
         this.storage.setLocalUser(this.localUser);
         if(this.localUser.token !== undefined){
-            this.router.navigate(['/**'])
+            this.router.navigate([''])
         }
     }
 
@@ -54,7 +54,7 @@ export class AuthService{
             this.token = localStorage.getItem('token')
         }
         if(this.token === undefined){
-            this.router.navigate(['/'])
+            this.router.navigate(['login'])
         }
          return this.token !== undefined
     }

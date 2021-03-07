@@ -21,17 +21,14 @@ import { UserComponent }            from '../../pages/user/user.component';
 
 @NgModule({
   imports: [
-    CommonModule,
-    //RouterModule.forChild(AdminLayoutRoutes),
+    
+    RouterModule.forChild(AdminLayoutRoutes),
     FormsModule,
     NgbModule,
     ReactiveFormsModule
   ],
   declarations: [
-    ProductsComponent,
-    CategoryComponent,
-    CompanyComponent,
-    UserComponent,
+   
     ProductsComponent,
     UpgradeComponent,
     TypographyComponent,

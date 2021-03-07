@@ -17,6 +17,11 @@ import { LoginComponent } from 'app/login/login.component';
 import { AuthService } from "./services/auth.service";
 import { StorageService } from "./services/storage.service";
 import { AuthGuard } from "./services/auth-guard.service";
+import { CommonModule } from "@angular/common";
+import { CategoryComponent } from "./pages/category/category.component";
+import { CompanyComponent } from "./pages/company/company.component";
+import { ProductsComponent } from "./pages/products/products.component";
+import { UserComponent } from "./pages/user/user.component";
 
 
 
@@ -25,11 +30,17 @@ import { AuthGuard } from "./services/auth-guard.service";
 
 @NgModule({
   declarations: [
+    ProductsComponent,
+    CategoryComponent,
+    CompanyComponent,
+    UserComponent,
     LoginComponent,
     AppComponent,
     AdminLayoutComponent,
     ],
   imports: [
+
+    CommonModule,
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
