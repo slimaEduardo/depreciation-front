@@ -1,202 +1,199 @@
+<button type="button" class="btn btn-primary btn-round" data-toggle="modal" data-target="#modalAddUser" (click)="resetFormulary()">
+  novo usuário
+</button>
+
 <div class="row">
-  <div class="col-md-4">
-    <div class="card card-user">
-      <div class="image">
-        <img src="assets/img/damir-bosnjak.jpg" alt="...">
-      </div>
-      <div class="card-body">
-        <div class="author">
-          <a href="#">
-            <img class="avatar border-gray" src="assets/img/mike.jpg" alt="...">
-            <h5 class="title">Chet Faker</h5>
-          </a>
-          <p class="description">
-            @chetfaker
-          </p>
-        </div>
-        <p class="description text-center">
-          "I like the way you work it
-          <br> No diggity
-          <br> I wanna bag it up"
-        </p>
-      </div>
-      <div class="card-footer">
-        <hr>
-        <div class="button-container">
-          <div class="row">
-            <div class="col-lg-3 col-md-6 col-6 ml-auto">
-              <h5>12
-                <br>
-                <small>Files</small>
-              </h5>
-            </div>
-            <div class="col-lg-4 col-md-6 col-6 ml-auto mr-auto">
-              <h5>2GB
-                <br>
-                <small>Used</small>
-              </h5>
-            </div>
-            <div class="col-lg-3 mr-auto">
-              <h5>24,6$
-                <br>
-                <small>Spent</small>
-              </h5>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+  <div class="col-md-12">
     <div class="card">
       <div class="card-header">
-        <h4 class="card-title">Team Members</h4>
       </div>
       <div class="card-body">
-        <ul class="list-unstyled team-members">
-          <li>
-            <div class="row">
-              <div class="col-md-2 col-2">
-                <div class="avatar">
-                  <img src="assets/img/faces/ayo-ogunseinde-2.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
-                </div>
-              </div>
-              <div class="col-md-7 col-7">
-                DJ Khaled
-                <br />
-                <span class="text-muted">
-                  <small>Offline</small>
-                </span>
-              </div>
-              <div class="col-md-3 col-3 text-right">
-                <button class="btn btn-sm btn-outline-success btn-round btn-icon"><i class="fa fa-envelope"></i></button>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div class="row">
-              <div class="col-md-2 col-2">
-                <div class="avatar">
-                  <img src="assets/img/faces/joe-gardner-2.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
-                </div>
-              </div>
-              <div class="col-md-7 col-7">
-                Creative Tim
-                <br />
-                <span class="text-success">
-                  <small>Available</small>
-                </span>
-              </div>
-              <div class="col-md-3 col-3 text-right">
-                <button class="btn btn-sm btn-outline-success btn-round btn-icon"><i class="fa fa-envelope"></i></button>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div class="row">
-              <div class="col-md-2 col-2">
-                <div class="avatar">
-                  <img src="assets/img/faces/clem-onojeghuo-2.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
-                </div>
-              </div>
-              <div class="col-ms-7 col-7">
-                Flume
-                <br />
-                <span class="text-danger">
-                  <small>Busy</small>
-                </span>
-              </div>
-              <div class="col-md-3 col-3 text-right">
-                <button class="btn btn-sm btn-outline-success btn-round btn-icon"><i class="fa fa-envelope"></i></button>
-              </div>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-  <div class="col-md-8">
-    <div class="card card-user">
-      <div class="card-header">
-        <h5 class="card-title">Edit Profile</h5>
-      </div>
-      <div class="card-body">
-        <form>
-          <div class="row">
-            <div class="col-md-5 pr-1">
-              <div class="form-group">
-                <label>Company (disabled)</label>
-                <input type="text" class="form-control" disabled="" placeholder="Company" value="Creative Code Inc.">
-              </div>
-            </div>
-            <div class="col-md-3 px-1">
-              <div class="form-group">
-                <label>Username</label>
-                <input type="text" class="form-control" placeholder="Username" value="michael23">
-              </div>
-            </div>
-            <div class="col-md-4 pl-1">
-              <div class="form-group">
-                <label for="exampleInputEmail1">Email address</label>
-                <input type="email" class="form-control" placeholder="Email">
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-6 pr-1">
-              <div class="form-group">
-                <label>First Name</label>
-                <input type="text" class="form-control" placeholder="Company" value="Chet">
-              </div>
-            </div>
-            <div class="col-md-6 pl-1">
-              <div class="form-group">
-                <label>Last Name</label>
-                <input type="text" class="form-control" placeholder="Last Name" value="Faker">
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-12">
-              <div class="form-group">
-                <label>Address</label>
-                <input type="text" class="form-control" placeholder="Home Address" value="Melbourne, Australia">
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-4 pr-1">
-              <div class="form-group">
-                <label>City</label>
-                <input type="text" class="form-control" placeholder="City" value="Melbourne">
-              </div>
-            </div>
-            <div class="col-md-4 px-1">
-              <div class="form-group">
-                <label>Country</label>
-                <input type="text" class="form-control" placeholder="Country" value="Australia">
-              </div>
-            </div>
-            <div class="col-md-4 pl-1">
-              <div class="form-group">
-                <label>Postal Code</label>
-                <input type="number" class="form-control" placeholder="ZIP Code">
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-12">
-              <div class="form-group">
-                <label>About Me</label>
-                <textarea class="form-control textarea">Oh so, your weak rhyme You doubt I'll bother, reading into it</textarea>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="update ml-auto mr-auto">
-              <button type="submit" class="btn btn-primary btn-round">Update Profile</button>
-            </div>
-          </div>
-        </form>
+        <div class="table-responsive">
+          <table class="table table-hover"  *ngIf="show">
+            
+            <thead class=" text-primary">
+              <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Email</th>
+                <th scope="col">Telefone Principal</th>
+                <th scope="col">Telefone Secundário</th>
+              </tr>
+            </thead>
+            
+            <tbody >
+            
+              <tr *ngFor="let user of users">
+                
+                <th scope="row" >{{ user.id }}</th>
+                <td>{{ user.name }}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.phone1 }}</td>
+                <td>{{ user.phone2 }}</td>
+                <td><button class="btn btn-info btn-icon" style="width: 15px; height: 35px; " data-toggle="modal"
+                  data-target="#modalUpdateUser" (click)="listUser(user.id)"><img style="width: 30px; height: 30px;" src="../assets/img/icons/baseline_create_white_18dp.png"></button>
+               <button class="btn btn-danger btn-icon"  style="width: 15px; height: 35px;" data-toggle="modal"
+                    data-target="#modalDelUser" (click)="referenceId(user.id)"><img style="width: 30px; height: 30px;" src="../assets/img/icons/baseline_delete_white_18dp.png"></button>
+                </td>
+                  
+              </tr>
+          
+            </tbody>
+         
+          </table>
+        
+        </div>
       </div>
     </div>
   </div>
 </div>
+
+
+<!-- Modal de Edição de empresas-->
+
+<div class="modal fade" id="modalUpdateUser" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <form [formGroup]="formulary" >
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Editar Usuário</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            
+                <div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            
+                                <label for="recipient-name" class="col-form-label"></label>
+                                <input type="text" class="form-control"  placeholder="Nome" formControlName="name" required>
+                              
+                             
+                                  <label for="recipient-name" class="col-form-label"></label>
+                                  <input type="text" class="form-control" placeholder="email" formControlName="email" required> 
+                           
+                             
+                            </div>
+                        </div>
+                      </div>
+                     
+                      <div class="row">
+                        <div class="col-sm-12">
+                        
+                          <div class="row">
+                            <div class="col-8 col-md-6">
+                              
+                                    <label for="recipient-name" class="col-form-label"></label>
+                                    <input type="text" class="form-control" placeholder="Telefone principal" formControlName="phone1" required>
+                                  
+                            </div>
+                            <div class="col-8 col-md-6">
+                              
+                              <label for="recipient-name" class="col-form-label"></label>
+                              <input type="text" class="form-control" placeholder="Telefone secundário" formControlName="phone2" required>
+                            
+                      </div>
+                            </div>
+                        </div>
+                                          
+
+                      
+                </div>
+          
+              
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+          <button type="submit" class="btn btn-primary"  [disabled]="!formulary.valid" (click)="edit(user.id)">Editar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Modal para inserção de Empresas -->
+
+<div class="modal fade" id="modalAddUser" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+    <form [formGroup]="formulary" (ngSubmit)="addCmp()">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Novo Usuário</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          
+              <div>
+                  <div class="row">
+                      <div class="col-sm-12">
+                          
+                              <label for="recipient-name" class="col-form-label">Nome</label>
+                              <input type="text" class="form-control" formControlName="name" required>
+                            
+                           
+                                <label for="recipient-name" class="col-form-label">E-Mail</label>
+                                <input type="text" class="form-control" formControlName="email" required> 
+                         
+                           
+                          </div>
+                      </div>
+                    </div>
+                   
+                    <div class="row">
+                      <div class="col-sm-12">
+                      
+                        <div class="row">
+                          <div class="col-8 col-md-6">
+                              
+                                  <label for="recipient-name" class="col-form-label">Telefone principal</label>
+                                  <input type="text" class="form-control" formControlName="phone1" required>
+                              
+                          </div>
+                          <div class="col-8 col-md-6">
+                              
+                            <label for="recipient-name" class="col-form-label">Telefone secundário</label>
+                            <input type="text" class="form-control" formControlName="phone2" required>
+                        
+                    </div>
+                          </div>
+                      </div>
+                                        
+
+                    
+              </div>
+        
+            
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+        <button type="submit" class="btn btn-primary" [disabled]="!formulary.valid">Adicionar</button>
+      </div>
+    </form>
+    </div>
+  </div>
+</div>
+
+<!-- Modal para excluir empresas -->
+
+<div class="modal fade" id="modalDelComp" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Deletar Usuário</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Tem certeza?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-primary" (click)="delete(user_id)" data-dismiss="modal">Apagar</button>
+      </div>
+    </div>
+  </div>

@@ -22,6 +22,7 @@ import { CategoryComponent } from "./pages/category/category.component";
 import { CompanyComponent } from "./pages/company/company.component";
 import { ProductsComponent } from "./pages/products/products.component";
 import { UserComponent } from "./pages/user/user.component";
+import { UserService } from "./services/user.service";
 
 
 
@@ -56,6 +57,7 @@ import { UserComponent } from "./pages/user/user.component";
     HttpClientModule,
   ],
   providers: [ AuthService,
+    UserService,
     StorageService,
   AuthGuard],
   bootstrap: [AppComponent]

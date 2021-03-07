@@ -2,6 +2,6 @@ export class User{
         id: number
         name: string
         email: string
-        tels: string[]
-        profile: string
+        phone1: string
+        phone2: string
 }
