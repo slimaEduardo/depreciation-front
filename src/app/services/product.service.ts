@@ -47,7 +47,7 @@ export class ProductService {
   public delete(product_id : number){
     return this.http.delete(`${API_CONFIG.baseUrl}/products/${product_id}`)
     .subscribe(response => {
-      console.log(response)
+      
     })
   }
 }

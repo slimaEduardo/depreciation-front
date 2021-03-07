@@ -43,7 +43,7 @@ export class CategoryService {
   public delete(category_id : number){
     return this.http.delete(`${API_CONFIG.baseUrl}/categories/${category_id}`)
     .subscribe(response => {
-      console.log(response)
+      
     })
   }
 }
