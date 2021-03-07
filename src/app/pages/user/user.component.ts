@@ -16,8 +16,9 @@ export class UserComponent implements OnInit{
         id: new FormControl(''),
         name: new FormControl('' , [Validators.required, Validators.minLength(5), Validators.maxLength(40)]),
         email: new FormControl('', [Validators.required, Validators.minLength(5), Validators.maxLength(40)]),
-        phone1: new FormControl('', [Validators.required, Validators.minLength(11), Validators.maxLength(11),Validators.pattern('[0-9,0-9]*')]),
-        phone2: new FormControl('', [Validators.required, Validators.minLength(11), Validators.maxLength(11),Validators.pattern('[0-9,0-9]*')])
+        phone1: new FormControl('', [ Validators.minLength(11), Validators.maxLength(11),Validators.pattern('[0-9,0-9]*')]),
+        phone2: new FormControl('', [ Validators.minLength(11), Validators.maxLength(11),Validators.pattern('[0-9,0-9]*')]),
+        password: new FormControl('' , [Validators.required, Validators.minLength(3), Validators.maxLength(40)])
         })
     
       public users: User[] = []
@@ -54,8 +55,9 @@ export class UserComponent implements OnInit{
              id: new FormControl(user_id),
              name: new FormControl(response.name, [Validators.required, Validators.minLength(5), Validators.maxLength(40)]),
              email: new FormControl(response.email, [Validators.required, Validators.minLength(5), Validators.maxLength(40)]),
-             phone1: new FormControl(response.phone1, [Validators.required, Validators.minLength(14), Validators.maxLength(14),Validators.pattern('[0-9,0-9]*')]),
-             phone2: new FormControl(response.phone1, [Validators.required, Validators.minLength(14), Validators.maxLength(14),Validators.pattern('[0-9,0-9]*')])
+             phone1: new FormControl(response.phone1, [ Validators.minLength(14), Validators.maxLength(14),Validators.pattern('[0-9,0-9]*')]),
+             phone2: new FormControl(response.phone1, [ Validators.minLength(14), Validators.maxLength(14),Validators.pattern('[0-9,0-9]*')]),
+             password: new FormControl(response.password , [Validators.required, Validators.minLength(3), Validators.maxLength(40)])
            })
           
           },

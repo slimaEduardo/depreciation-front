@@ -86,16 +86,18 @@
                             <div class="col-8 col-md-6">
                               
                                     <label for="recipient-name" class="col-form-label"></label>
-                                    <input type="text" class="form-control" placeholder="Telefone principal" formControlName="phone1" required>
+                                    <input type="text" class="form-control" placeholder="Telefone principal" formControlName="phone1">
                                   
                             </div>
                             <div class="col-8 col-md-6">
                               
                               <label for="recipient-name" class="col-form-label"></label>
-                              <input type="text" class="form-control" placeholder="Telefone secundário" formControlName="phone2" required>
+                              <input type="text" class="form-control" placeholder="Telefone secundário" formControlName="phone2">
                             
                       </div>
                             </div>
+
+                            
                         </div>
                                           
 
@@ -118,7 +120,7 @@
 <div class="modal fade" id="modalAddUser" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
-    <form [formGroup]="formulary" (ngSubmit)="addCmp()">
+    <form [formGroup]="formulary" (ngSubmit)="addUser()">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Novo Usuário</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
@@ -150,16 +152,18 @@
                           <div class="col-8 col-md-6">
                               
                                   <label for="recipient-name" class="col-form-label">Telefone principal</label>
-                                  <input type="text" class="form-control" formControlName="phone1" required>
+                                  <input type="text" class="form-control" formControlName="phone1">
                               
                           </div>
                           <div class="col-8 col-md-6">
                               
                             <label for="recipient-name" class="col-form-label">Telefone secundário</label>
-                            <input type="text" class="form-control" formControlName="phone2" required>
+                            <input type="text" class="form-control" formControlName="phone2">
                         
                     </div>
                           </div>
+                          <label for="recipient-name" class="col-form-label">Senha</label>
+                          <input type="text" class="form-control" formControlName="password" required>
                       </div>
                                         
 
@@ -179,7 +183,7 @@
 
 <!-- Modal para excluir empresas -->
 
-<div class="modal fade" id="modalDelComp" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal fade" id="modalDelUser" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
