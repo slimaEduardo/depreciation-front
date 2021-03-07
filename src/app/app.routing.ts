@@ -14,15 +14,15 @@ export const AppRoutes: Routes = [
     path: 'login',
     component:LoginComponent,
     pathMatch: 'full',
-  }, {
+  }, 
+  {
     path: '',
     component: AdminLayoutComponent,
     children: [//children significa que terá rotas filhas dentro da pagina
       { pathMatch: 'full', path: 'company', component: CompanyComponent },
       { pathMatch: 'full', path: 'category', component: CategoryComponent },
       { pathMatch: 'full', path: 'products', component: ProductsComponent },
-      { pathMatch: 'full', path: 'user', component: UserComponent }
+      { pathMatch: 'full', path: 'user', component: UserComponent },
       ],
-
-    canActivate: [ AuthGuard ]},  
+    canActivate: [ AuthGuard ]}  
 ]

@@ -16,6 +16,8 @@ export class AuthService{
 
     public token: string
     public localUser: LocalUser
+    public aux1: boolean
+    public aux2: boolean
 
     jwtHelperService: JwtHelperService  = new JwtHelperService ()
 
@@ -32,7 +34,7 @@ export class AuthService{
     }
 
     successfulLogin(authorizationValue : string) {
-        this.token = authorizationValue.substring(7);
+    this.token = authorizationValue.substring(7);
        this.localUser  = {
             token: this.token,
             email: this.jwtHelperService.decodeToken(this.token).sub
@@ -40,7 +42,7 @@ export class AuthService{
         };
                
         this.storage.setLocalUser(this.localUser);
-        if(this.localUser.token !== undefined){
+        if(this.localUser.token !== undefined && this.localUser.token !==null){
             this.router.navigate([''])
         }
     }
@@ -50,12 +52,17 @@ export class AuthService{
     }
 
     public authenticated(): boolean{
-        if(this.token === undefined && localStorage.getItem('token') != null){
+        this.aux1 = this.token === undefined
+        this.aux2 = localStorage.getItem('token') !== 'null'
+        console.log('Aux1: ', this.aux1)
+        console.log('Aux2: ', this.aux2)
+        if(this.token === undefined && localStorage.getItem('token') !== 'null'){
             this.token = localStorage.getItem('token')
         }
         if(this.token === undefined){
-            this.router.navigate(['login'])
+            this.router.navigate(['/login'])
         }
-         return this.token !== undefined
+        console.log('token2: ',this.token)
+         return this.token != undefined
     }
 } 

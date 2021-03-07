@@ -1,13 +1,14 @@
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { API_CONFIG } from "app/config/api.config";
 import { User } from "app/models/user.model";
+import { StorageService } from "./storage.service";
 
 @Injectable()
 export class UserService{
 
     
-    constructor(public http: HttpClient) {
+    constructor(public http: HttpClient, public storage: StorageService) {
     }
   
     public findById(_id : number){
@@ -16,10 +17,12 @@ export class UserService{
   
     
     public getUsers(): Promise<User[]>{
-        return this.http.get(`${API_CONFIG.baseUrl}/users`)
+      let token = this.storage.getLocalUser().token;
+      let authHeader = new HttpHeaders({'Authorization': 'Bearer ' + token});
+        return this.http.get(`${API_CONFIG.baseUrl}/users`, {'headers': authHeader})
         .toPromise()
         .then((response: any) => {  
-          return response.message
+          return response
             
         })
     }
