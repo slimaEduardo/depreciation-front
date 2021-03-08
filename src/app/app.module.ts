@@ -23,6 +23,7 @@ import { CompanyComponent } from "./pages/company/company.component";
 import { ProductsComponent } from "./pages/products/products.component";
 import { UserComponent } from "./pages/user/user.component";
 import { UserService } from "./services/user.service";
+import { AuthInterceptor } from "interceptors/auth-interceptor";
 
 
 
@@ -56,7 +57,9 @@ import { UserService } from "./services/user.service";
     FixedPluginModule,
     HttpClientModule,
   ],
-  providers: [ AuthService,
+  providers: [ 
+    AuthInterceptor,
+    AuthService,
     UserService,
     StorageService,
   AuthGuard],

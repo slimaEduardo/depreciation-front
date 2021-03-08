@@ -40,29 +40,45 @@ export class AuthService{
             email: this.jwtHelperService.decodeToken(this.token).sub
                    
         };
-               
-        this.storage.setLocalUser(this.localUser);
+       
+        this.storage.setLocalUser(this.localUser)   
+        localStorage.setItem('token',this.token)
+       
         if(this.localUser.token !== undefined && this.localUser.token !==null){
             this.router.navigate([''])
         }
     }
 
     logout() {
-        this.storage.setLocalUser(null);
+        this.storage.setLocalUser(null)   
+        localStorage.setItem('token','undefined')
+        this.token = undefined
+        this.router.navigate(['login'])
     }
 
     public authenticated(): boolean{
-        this.aux1 = this.token === undefined
-        this.aux2 = localStorage.getItem('token') !== 'null'
-        console.log('Aux1: ', this.aux1)
-        console.log('Aux2: ', this.aux2)
-        if(this.token === undefined && localStorage.getItem('token') !== 'null'){
+       
+        
+        if(this.token === undefined && localStorage.getItem('token') !== 'undefined'){
+            
             this.token = localStorage.getItem('token')
         }
+       
         if(this.token === undefined){
-            this.router.navigate(['/login'])
+            
+            this.router.navigate(['login'])
         }
-        console.log('token2: ',this.token)
-         return this.token != undefined
+       
+         return this.token !== undefined
+    }
+
+    refreshToken() {
+        return this.http.post(
+            `${API_CONFIG.baseUrl}/auth/refresh_token`, 
+            {},
+            {
+                observe: 'response',
+                responseType: 'text'
+            });
     }
 } 

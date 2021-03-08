@@ -8,7 +8,7 @@ export class AuthGuard implements CanActivate{
     constructor(private auth: AuthService){}
     
     canActivate(): boolean {
-        console.log(this.auth.authenticated())
+       
         return this.auth.authenticated()
     }
 

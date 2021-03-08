@@ -20,6 +20,7 @@ export class LoginComponent implements OnInit {
   constructor(public auth: AuthService) { }
 
   ngOnInit(): void {
+    
   }
 
   public authenticate(): void {
@@ -32,4 +33,5 @@ export class LoginComponent implements OnInit {
    error => {});
   }
 
+ 
 }

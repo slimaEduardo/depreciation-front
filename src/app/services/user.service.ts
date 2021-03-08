@@ -12,7 +12,9 @@ export class UserService{
     }
   
     public findById(_id : number){
-      return this.http.get<User>(`${API_CONFIG.baseUrl}/users/${_id}`);
+      let token = this.storage.getLocalUser().token;
+      let authHeader = new HttpHeaders({'Authorization': 'Bearer ' + token});
+      return this.http.get<User>(`${API_CONFIG.baseUrl}/users/${_id}`,{'headers': authHeader});
     }
   
     

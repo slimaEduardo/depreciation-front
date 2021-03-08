@@ -12,9 +12,7 @@ import { NotificationsComponent }   from '../../pages/notifications/notification
 import { UpgradeComponent }         from '../../pages/upgrade/upgrade.component';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { CompanyComponent } from 'app/pages/company/company.component';
-import { CategoryComponent } from 'app/pages/category/category.component';
-import { UserComponent }            from '../../pages/user/user.component';
+
 
 
 
