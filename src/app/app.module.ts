@@ -23,7 +23,7 @@ import { CompanyComponent } from "./pages/company/company.component";
 import { ProductsComponent } from "./pages/products/products.component";
 import { UserComponent } from "./pages/user/user.component";
 import { UserService } from "./services/user.service";
-import { AuthInterceptor } from "interceptors/auth-interceptor";
+import { InterceptorModule } from "interceptors/interceptor.module";
 
 
 
@@ -49,16 +49,16 @@ import { AuthInterceptor } from "interceptors/auth-interceptor";
     RouterModule.forRoot(AppRoutes,{
       useHash: true
     }),
-    
+   
     SidebarModule,
     NavbarModule,
     ToastrModule.forRoot(),
     FooterModule,
     FixedPluginModule,
     HttpClientModule,
+    InterceptorModule
   ],
   providers: [ 
-    AuthInterceptor,
     AuthService,
     UserService,
     StorageService,

@@ -12,16 +12,14 @@ export class UserService{
     }
   
     public findById(_id : number){
-      let token = this.storage.getLocalUser().token;
-      let authHeader = new HttpHeaders({'Authorization': 'Bearer ' + token});
-      return this.http.get<User>(`${API_CONFIG.baseUrl}/users/${_id}`,{'headers': authHeader});
+      
+      return this.http.get<User>(`${API_CONFIG.baseUrl}/users/${_id}`);
     }
   
     
     public getUsers(): Promise<User[]>{
-      let token = this.storage.getLocalUser().token;
-      let authHeader = new HttpHeaders({'Authorization': 'Bearer ' + token});
-        return this.http.get(`${API_CONFIG.baseUrl}/users`, {'headers': authHeader})
+      
+        return this.http.get(`${API_CONFIG.baseUrl}/users`)
         .toPromise()
         .then((response: any) => {  
           return response

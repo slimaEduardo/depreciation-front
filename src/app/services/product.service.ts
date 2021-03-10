@@ -30,7 +30,7 @@ export class ProductService {
   }
 
   public insert(obj: Product): Promise<Product>{
-    console.log(obj)
+    
     return this.http.post(`${API_CONFIG.baseUrl}/products/`,obj)
     .toPromise()
     .then((response: any) => {

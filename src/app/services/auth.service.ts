@@ -45,7 +45,7 @@ export class AuthService{
         localStorage.setItem('token',this.token)
        
         if(this.localUser.token !== undefined && this.localUser.token !==null){
-            this.router.navigate([''])
+            this.router.navigate(['products'])
         }
     }
 

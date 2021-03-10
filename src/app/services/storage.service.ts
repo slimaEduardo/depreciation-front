@@ -17,11 +17,11 @@ export class StorageService {
 
     setLocalUser(obj : LocalUser) {
         if (obj === null) {
-            console.log('obj === null')
+            
             localStorage.removeItem(STORAGE_KEYS.localUser);
         }
         else {
-            console.log('obj !== null')
+            
             localStorage.setItem(STORAGE_KEYS.localUser, JSON.stringify(obj));
         }
     }
