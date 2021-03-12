@@ -37,6 +37,7 @@ export class UserService{
     }
   
    public update(_id: number, obj: User) {
+    console.log(obj)
       return this.http.put(`${API_CONFIG.baseUrl}/users/${_id}`, obj)
       .subscribe(response => {
        }, error => {console.log(error)})

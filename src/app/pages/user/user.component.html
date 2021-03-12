@@ -18,6 +18,7 @@
                 <th scope="col">Email</th>
                 <th scope="col">Telefone Principal</th>
                 <th scope="col">Telefone Secundário</th>
+                <th scope="col">Perfil</th>
               </tr>
             </thead>
             
@@ -30,6 +31,7 @@
                 <td>{{ user.email }}</td>
                 <td>{{ user.phone1 }}</td>
                 <td>{{ user.phone2 }}</td>
+                <td>{{ user.profile }}</td>
                 <td><button class="btn btn-info btn-icon" style="width: 15px; height: 35px; " data-toggle="modal"
                   data-target="#modalUpdateUser" (click)="listUser(user.id)"><img style="width: 30px; height: 30px;" src="../assets/img/icons/baseline_create_white_18dp.png"></button>
                <button class="btn btn-danger btn-icon"  style="width: 15px; height: 35px;" data-toggle="modal"
@@ -99,7 +101,17 @@
 
                             
                         </div>
-                                           
+                                     
+                        <div class="col-8 col-md-6">
+                              
+                          <label for="recipient-name" class="col-form-label">Perfil de Usuário</label>
+                          <select  class="form-control" id="profileId" formControlName="profileId"  required>
+                            <option value="">--Selecione um perfil--</option>
+                            <option  [value]="1">ADMIN</option>
+                            <option  [value]="2">USER</option>
+                          </select> 
+                      
+                  </div>    
 
                       
                 </div>
@@ -166,11 +178,40 @@
                           
                       </div>
                                         
-                         
+                      <div class="col-8 col-md-6">
+                              
+                        <label for="recipient-name" class="col-form-label">Perfil de Usuário</label>
+                        <select  class="form-control"  formControlName="profileId"  required>
+                          <option value="">--Selecione um perfil--</option>
+                          <option  [value]="1">ADMIN</option>
+                          <option  [value]="2">USER</option>
+                        </select> 
+                    
+                </div>     
                     
               </div>
-              <label for="recipient-name" class="col-form-label"></label>
-              <input type="text" class="form-control" placeholder="Senha" formControlName="password" required>
+
+              <div class="row">
+                <div class="col-sm-12">
+                
+                  <div class="row">
+                    <div class="col-8 col-md-6">
+                        
+                            <label for="recipient-name" class="col-form-label">Senha</label>
+                            <input type="password" size="10" maxlength="10" class="form-control" formControlName="password">
+                        
+                    </div>
+                    <div class="col-8 col-md-6">
+                        
+                      <label for="recipient-name" class="col-form-label">Repita a Senha</label>
+                      <input type="password" size="10" maxlength="10" class="form-control" >
+                  
+              </div>
+                    </div>
+                    
+                </div>
+              </div>
+              
             
       </div>
       <div class="modal-footer">

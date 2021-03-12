@@ -18,7 +18,8 @@ export class UserComponent implements OnInit{
         email: new FormControl('', [Validators.required, Validators.minLength(5), Validators.maxLength(40)]),
         phone1: new FormControl('', [ Validators.minLength(11), Validators.maxLength(11),Validators.pattern('[0-9,0-9]*')]),
         phone2: new FormControl('', [ Validators.minLength(11), Validators.maxLength(11),Validators.pattern('[0-9,0-9]*')]),
-        password: new FormControl('' , [Validators.required, Validators.minLength(3), Validators.maxLength(40)])
+        password: new FormControl('' , [Validators.required, Validators.minLength(3), Validators.maxLength(40)]),
+        profileId: new FormControl('', [Validators.required, Validators.pattern('[0-9]')])
         })
     
       public users: User[] = []
@@ -57,7 +58,8 @@ export class UserComponent implements OnInit{
              email: new FormControl(response.email, [Validators.required, Validators.minLength(5), Validators.maxLength(40)]),
              phone1: new FormControl(response.phone1, [ Validators.minLength(11), Validators.maxLength(11),Validators.pattern('[0-9,0-9]*')]),
              phone2: new FormControl(response.phone1, [ Validators.minLength(11), Validators.maxLength(11),Validators.pattern('[0-9,0-9]*')]),
-             password: new FormControl(response.password , [Validators.minLength(3), Validators.maxLength(40)])
+             password: new FormControl(response.password , [Validators.minLength(3), Validators.maxLength(40)]),
+             profileId: new FormControl(response.profile, [Validators.required, Validators.pattern('[0-9]')])
            })
           
           },
